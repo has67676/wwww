@@ -1,0 +1,13 @@
+-- LocalScript inside StarterPlayerScripts
+
+local CollectionService = game:GetService("CollectionService")
+local RunService = game:GetService("RunService")
+local camera = workspace.CurrentCamera
+
+-- Highlight all items tagged as "Collectible"
+for _, item in pairs(CollectionService:GetTagged("Collectible")) do
+    local highlight = Instance.new("Highlight")
+    highlight.Parent = item
+    highlight.FillColor = Color3.fromRGB(255, 255, 0)
+    highlight.OutlineColor = Color3.fromRGB(255, 165, 0)
+end
